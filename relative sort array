@@ -1,0 +1,14 @@
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        ans=[]
+        for i in range(len(arr2)):
+            low=arr2[i]
+            for j in range(len(arr1)):
+                if arr1[j]==low:
+                    ans.append(arr1[j]) 
+        extra=[]
+        for i in arr1:
+            if i not in arr2:
+                extra.append(i)
+        extra.sort()
+        return ans+extra
